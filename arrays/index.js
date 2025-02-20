@@ -138,7 +138,7 @@ for (let i = 0; i < averageTemp.length; i++) {
   }
 }
 
-// Referências paramétodos dearrayemJavaScript
+// Referências para métodos de array em JavaScript
 
 // Os arrays em Javascript sao objetos modificados, o que significa que todo array que criarmos terá alguns métodos disponíveis para uso
 
