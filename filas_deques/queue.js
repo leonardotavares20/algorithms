@@ -59,3 +59,44 @@ class Queue {
     }
   }
 }
+
+const queue = new Queue();
+
+queue.enqueue("John");
+queue.enqueue("Jack");
+queue.enqueue("Mark");
+
+queue.toString();
+queue.size();
+
+queue.dequeue();
+
+queue.toString();
+
+function hotPotato(elementsList, num) {
+  const queue = new Queue();
+  const eliminatedList = [];
+
+  for (let i = 0; i < elementsList.length; i++) {
+    queue.enqueue(elementsList[i]);
+  }
+
+  while (queue.size() > 1) {
+    for (let i = 0; i < num; i++) {
+      queue.enqueue(queue.dequeue());
+    }
+
+    eliminatedList.push(queue.dequeue());
+  }
+
+  return {
+    eliminated: eliminatedList,
+    winner: queue.dequeue(),
+  };
+}
+
+const names = ["John", "Jack", "Camila", "Ingrid", "Carl"];
+
+const result = hotPotato(names, 7);
+
+console.log(result);
